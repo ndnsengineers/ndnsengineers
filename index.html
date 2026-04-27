@@ -310,124 +310,28 @@
     color: rgba(255,255,255,0.45);
   }
 
-  /* ── SERVICES ── */
-  #services { background: var(--section-mid); }
-  .services-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    margin-bottom: 3.5rem;
-    flex-wrap: wrap; gap: 1rem;
-  }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5px;
-    background: rgba(212,160,23,0.1);
-    border: 1px solid rgba(212,160,23,0.1);
-  }
-  .service-card {
-    background: var(--section-mid);
-    padding: 2rem;
-    transition: background 0.3s;
-    cursor: default;
-    position: relative;
-    overflow: hidden;
-  }
-  .service-card::after {
-    content: '';
-    position: absolute; bottom: 0; left: 0;
-    height: 2px; width: 0;
-    background: var(--gold);
-    transition: width 0.4s;
-  }
-  .service-card:hover { background: var(--card-bg); }
-  .service-card:hover::after { width: 100%; }
-  .service-icon {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    display: block;
-  }
-  .service-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 0.6rem;
-  }
-  .service-desc {
-    font-size: 0.83rem;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.7;
-  }
-
-  /* ── TEAM ── */
-  #team { background: var(--section-dark); }
-  .team-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 3.5rem;
-  }
-  .team-card {
-    background: var(--card-bg);
-    border: 1px solid rgba(212,160,23,0.15);
-    border-radius: 4px;
-    padding: 2.5rem;
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.3s;
-  }
-  .team-card:hover { border-color: rgba(212,160,23,0.4); }
-  .team-card::before {
-    content: '"';
-    position: absolute; right: 1.5rem; top: 1rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 6rem;
-    color: rgba(212,160,23,0.06);
-    line-height: 1;
-  }
-  .team-avatar {
-    width: 64px; height: 64px;
-    background: rgba(212,160,23,0.15);
-    border: 2px solid var(--gold);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--gold);
-    margin-bottom: 1.2rem;
-  }
-  .team-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 0.3rem;
-  }
-  .team-title {
-    font-size: 0.8rem;
-    color: var(--gold);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 1.2rem;
-  }
-  .team-bio {
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.55);
-    line-height: 1.8;
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-  }
-  .team-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .team-tag {
-    font-size: 0.72rem;
-    padding: 0.3rem 0.7rem;
-    background: rgba(212,160,23,0.1);
-    border: 1px solid rgba(212,160,23,0.25);
-    color: var(--gold);
-    border-radius: 2px;
-    letter-spacing: 0.5px;
-  }
+<!-- ═══ SERVICES ═══ -->
+<section id="services">
+  <div class="services-header fade-up">
+    <div>
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Our Services</h2>
+      <div class="gold-line"></div>
+    </div>
+    <p class="section-sub" style="max-width:300px;text-align:right;">Primary expertise: Structural Design &amp; Consulting — backed by a full suite of civil engineering services.</p>
+  </div>
+  <div class="services-grid fade-up">
+    <div class="service-card featured-service"><span class="service-badge">Core Service</span><span class="service-icon">📐</span><div class="service-name">Structural Design &amp; Consulting</div><div class="service-desc">Our flagship service — RCC, steel, and composite structural engineering designed for seismic zones and wind loads per IS codes. Safe, code-compliant, and cost-effective for residential, commercial, and industrial projects of all scales.</div></div>
+    <div class="service-card"><span class="service-icon">🏛️</span><div class="service-name">Architectural Design</div><div class="service-desc">Modern, Vastu-compliant 3D architectural designs tailored to individual client needs — artistic yet economically grounded.</div></div>
+    <div class="service-card"><span class="service-icon">🏗️</span><div class="service-name">Construction &amp; Contracting</div><div class="service-desc">Full-scale construction services for residential, commercial, and industrial buildings. Turnkey project delivery available.</div></div>
+    <div class="service-card"><span class="service-icon">🛋️</span><div class="service-name">Interior Design</div><div class="service-desc">Functional, aesthetic interiors designed to maximize space and reflect your personal style — residential and commercial.</div></div>
+    <div class="service-card"><span class="service-icon">📋</span><div class="service-name">Building Liaison &amp; Approvals</div><div class="service-desc">End-to-end support for building plan approvals, government liaising, and permitting processes.</div></div>
+    <div class="service-card"><span class="service-icon">⚡</span><div class="service-name">MEP Services</div><div class="service-desc">Mechanical, Electrical, and Plumbing design integrated seamlessly with structural and architectural drawings.</div></div>
+    <div class="service-card"><span class="service-icon">🔍</span><div class="service-name">Structural Inspections &amp; Proof Checking</div><div class="service-desc">Third-party consulting, quality checking, and building inspections. Proof checking for existing designs.</div></div>
+    <div class="service-card"><span class="service-icon">📊</span><div class="service-name">Project Management</div><div class="service-desc">Comprehensive project planning, execution monitoring, contractor coordination, and on-site supervision.</div></div>
+    <div class="service-card"><span class="service-icon">📏</span><div class="service-name">Surveying &amp; Quantity Estimation</div><div class="service-desc">Topographic surveying, levelling, and accurate quantity estimation to keep your project on budget.</div></div>
+  </div>
+</section>
 
   /* ── PROJECTS ── */
   #projects { background: var(--section-mid); }
