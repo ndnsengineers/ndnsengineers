@@ -3,754 +3,270 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NDNS Engineers – Civil & Structural Consultants</title>
-<meta name="description" content="NDNS Engineers – Civil & Structural Consultants based in Karnataka. Expert in structural design, RCC, steel structures, architecture, and construction services.">
+<title>NDNS Engineers – Structural Design & Consultants</title>
+<meta name="description" content="NDNS Engineers – Expert Structural Design & Consultants. 15+ years experience, 5000+ structural projects. RCC, Steel, Architecture, Construction services.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --black: #1a1a1a;
     --gold: #D4A017;
     --gold-light: #F0C040;
-    --gold-dim: #9A7210;
     --white: #FFFFFF;
-    --off-white: #F8F6F1;
-    --grey-light: #EBEBEB;
-    --grey-mid: #888;
-    --grey-dark: #444;
     --section-dark: #111111;
     --section-mid: #1E1E1E;
     --card-bg: #242424;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--black);
-    color: var(--white);
-    overflow-x: hidden;
-  }
-
-  /* ── NAVBAR ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 5%;
-    height: 70px;
-    background: rgba(17,17,17,0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(212,160,23,0.2);
-    transition: all 0.3s;
-  }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+ 
+  /* NAVBAR */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 70px; background: rgba(17,17,17,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(212,160,23,0.2); transition: height 0.3s; }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; }
   .nav-logo span { color: var(--gold); }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    color: rgba(255,255,255,0.8);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
+  .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold); }
-  .nav-cta {
-    background: var(--gold);
-    color: var(--black) !important;
-    padding: 0.5rem 1.2rem !important;
-    border-radius: 2px;
-    font-weight: 600 !important;
-    transition: background 0.2s !important;
-  }
-  .nav-cta:hover { background: var(--gold-light) !important; color: var(--black) !important; }
-
+  .nav-cta { background: var(--gold) !important; color: var(--black) !important; padding: 0.5rem 1.2rem !important; border-radius: 2px; font-weight: 700 !important; }
+  .nav-cta:hover { background: var(--gold-light) !important; }
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-  .hamburger span { width: 24px; height: 2px; background: var(--white); display: block; transition: 0.3s; }
-
-  /* ── HERO ── */
-  #hero {
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 80px 5% 0;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 60%, #0d0d0d 100%);
-  }
-
-  .hero-grid-bg {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(212,160,23,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(212,160,23,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-  }
-
-  .hero-accent {
-    position: absolute; right: -100px; top: 50%; transform: translateY(-50%);
-    width: 700px; height: 700px;
-    border-radius: 50%;
-    background: radial-gradient(ellipse, rgba(212,160,23,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-content { position: relative; max-width: 750px; }
-
-  .hero-tag {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 1.5rem;
-    border: 1px solid rgba(212,160,23,0.3);
-    padding: 0.4rem 1rem; border-radius: 2px;
-  }
-  .hero-tag::before {
-    content: ''; width: 20px; height: 1px; background: var(--gold);
-  }
-
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    letter-spacing: -1px;
-  }
-  .hero-title em {
-    font-style: normal;
-    color: var(--gold);
-  }
-
-  .hero-sub {
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.8;
-    max-width: 560px;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-  }
-
+  .hamburger span { width: 24px; height: 2px; background: var(--white); display: block; }
+ 
+  /* HERO */
+  #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; padding: 100px 5% 60px; position: relative; overflow: hidden; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 60%, #0d0d0d 100%); }
+  .hero-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(212,160,23,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(212,160,23,0.04) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+  .hero-content { position: relative; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; border: 1px solid rgba(212,160,23,0.3); padding: 0.4rem 1rem; border-radius: 2px; }
+  .hero-tag::before { content: ''; width: 20px; height: 1px; background: var(--gold); }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 4.5vw, 4rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1px; }
+  .hero-title em { font-style: normal; color: var(--gold); }
+  .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.65); line-height: 1.8; max-width: 520px; margin-bottom: 2.5rem; font-weight: 300; }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary {
-    background: var(--gold);
-    color: var(--black);
-    padding: 0.9rem 2rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    border-radius: 2px;
-    transition: all 0.2s;
-    text-transform: uppercase;
-  }
+  .btn-primary { background: var(--gold); color: var(--black); padding: 0.9rem 2rem; font-size: 0.9rem; font-weight: 700; text-decoration: none; border-radius: 2px; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.5px; }
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-  .btn-outline {
-    background: transparent;
-    color: var(--white);
-    padding: 0.9rem 2rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 2px;
-    transition: all 0.2s;
-    text-transform: uppercase;
-  }
+  .btn-outline { background: transparent; color: var(--white); padding: 0.9rem 2rem; font-size: 0.9rem; font-weight: 500; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); border-radius: 2px; transition: all 0.2s; text-transform: uppercase; }
   .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-  .hero-stats {
-    display: flex; gap: 3rem;
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .stat-item { }
-  .stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--gold);
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.5);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 4px;
-  }
-
-  /* ── SECTION COMMON ── */
+  .hero-stats { display: flex; gap: 2.5rem; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold); line-height: 1; }
+  .stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+ 
+  /* HERO VISUAL */
+  .hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
+  .hero-visual-inner { position: relative; width: 100%; max-width: 480px; }
+  .hero-svg-card { background: var(--card-bg); border: 1px solid rgba(212,160,23,0.2); border-radius: 8px; padding: 1.5rem; position: relative; overflow: hidden; }
+  .hero-svg-card::before { content: ''; position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: radial-gradient(ellipse, rgba(212,160,23,0.07) 0%, transparent 70%); pointer-events: none; }
+  .hero-card-label { font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+  .live-badge { display: flex; align-items: center; font-size: 0.7rem; color: #22c55e; margin-bottom: 0.5rem; }
+  .pulse-dot { width: 10px; height: 10px; background: #22c55e; border-radius: 50%; display: inline-block; margin-right: 6px; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(34,197,94,0.4)} 70%{box-shadow:0 0 0 8px rgba(34,197,94,0)} 100%{box-shadow:0 0 0 0 rgba(34,197,94,0)} }
+  .hero-float-card { position: absolute; background: rgba(20,20,20,0.97); border: 1px solid rgba(212,160,23,0.35); border-radius: 6px; padding: 0.8rem 1.1rem; backdrop-filter: blur(10px); }
+  .float-top { top: -18px; right: -8px; animation: floatY 4s ease-in-out infinite; }
+  .float-bottom { bottom: 24px; left: -18px; animation: floatY2 5s ease-in-out infinite; }
+  .float-mid { top: 42%; right: -28px; animation: floatY3 3.5s ease-in-out infinite; }
+  @keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  @keyframes floatY2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+  @keyframes floatY3 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+  .float-num { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: var(--gold); line-height: 1; }
+  .float-text { font-size: 0.65rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+  .float-name { font-size: 0.75rem; color: var(--white); font-weight: 500; margin: 2px 0; }
+ 
+  /* SECTIONS */
   section { padding: 6rem 5%; }
-
-  .section-label {
-    font-size: 0.72rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.75rem;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  .section-sub {
-    color: rgba(255,255,255,0.55);
-    font-size: 1rem;
-    line-height: 1.8;
-    max-width: 560px;
-    font-weight: 300;
-  }
-
-  .gold-line {
-    width: 50px; height: 3px;
-    background: var(--gold);
-    margin: 1.5rem 0;
-  }
-
-  /* ── ABOUT ── */
+  .section-label { font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+  .section-sub { color: rgba(255,255,255,0.55); font-size: 1rem; line-height: 1.8; max-width: 560px; font-weight: 300; }
+  .gold-line { width: 50px; height: 3px; background: var(--gold); margin: 1.5rem 0; }
+ 
+  /* CTA BANNERS */
+  .cta-banner { background: linear-gradient(135deg, rgba(212,160,23,0.1) 0%, rgba(212,160,23,0.03) 100%); border-top: 1px solid rgba(212,160,23,0.2); border-bottom: 1px solid rgba(212,160,23,0.2); padding: 3rem 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+  .cta-banner-text h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .cta-banner-text h3 span { color: var(--gold); }
+  .cta-banner-text p { font-size: 0.9rem; color: rgba(255,255,255,0.55); font-weight: 300; }
+  .cta-banner-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .btn-call { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; border: 2px solid var(--gold); color: var(--gold); padding: 0.8rem 1.6rem; font-size: 0.9rem; font-weight: 700; text-decoration: none; border-radius: 2px; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'DM Sans', sans-serif; cursor: pointer; }
+  .btn-call:hover { background: var(--gold); color: var(--black); }
+  .btn-whatsapp { display: inline-flex; align-items: center; gap: 0.5rem; background: #25D366; color: var(--white); padding: 0.8rem 1.6rem; font-size: 0.9rem; font-weight: 700; text-decoration: none; border-radius: 2px; transition: all 0.2s; text-transform: uppercase; }
+  .btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); }
+ 
+  /* ABOUT */
   #about { background: var(--section-dark); }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-    margin-top: 4rem;
-  }
-  .about-text p {
-    color: rgba(255,255,255,0.65);
-    font-size: 1rem;
-    line-height: 1.9;
-    font-weight: 300;
-    margin-bottom: 1.2rem;
-  }
-  .about-highlights {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  .highlight-item {
-    background: var(--card-bg);
-    border: 1px solid rgba(212,160,23,0.15);
-    padding: 1.2rem;
-    border-radius: 4px;
-    border-left: 3px solid var(--gold);
-  }
-  .highlight-title {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--gold);
-    margin-bottom: 0.4rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  .highlight-text {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.55);
-    line-height: 1.6;
-  }
-  .about-visual {
-    background: var(--card-bg);
-    border: 1px solid rgba(212,160,23,0.15);
-    border-radius: 4px;
-    padding: 2.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .about-visual::before {
-    content: '';
-    position: absolute; top: 0; right: 0;
-    width: 120px; height: 120px;
-    background: radial-gradient(ellipse, rgba(212,160,23,0.12) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .about-visual-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: var(--white);
-  }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 4rem; }
+  .about-text p { color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.9; font-weight: 300; margin-bottom: 1.2rem; }
+  .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+  .highlight-item { background: var(--card-bg); border: 1px solid rgba(212,160,23,0.15); padding: 1.2rem; border-radius: 4px; border-left: 3px solid var(--gold); }
+  .highlight-title { font-size: 0.85rem; font-weight: 600; color: var(--gold); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .highlight-text { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+  .about-visual { background: var(--card-bg); border: 1px solid rgba(212,160,23,0.15); border-radius: 4px; padding: 2.5rem; }
+  .about-visual-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; }
   .about-visual-title span { color: var(--gold); }
-  .about-cert {
-    display: flex; align-items: flex-start; gap: 1rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-  }
+  .about-cert { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
   .about-cert:last-child { border-bottom: none; }
-  .cert-icon {
-    width: 36px; height: 36px; min-width: 36px;
-    background: rgba(212,160,23,0.12);
-    border: 1px solid rgba(212,160,23,0.3);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.9rem;
-  }
-  .cert-text strong {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--white);
-    margin-bottom: 2px;
-  }
-  .cert-text span {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.45);
-  }
-
-/* ===== SERVICES SECTION FIX ===== */
-
-.services-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.section-label {
-  color: #c9a646;
-  letter-spacing: 2px;
-  font-size: 12px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.section-title {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.gold-line {
-  width: 50px;
-  height: 3px;
-  background: #c9a646;
-  margin-top: 10px;
-}
-
-.section-sub {
-  color: #aaa;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* GRID FIX */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-
-/* CARD DESIGN */
-.service-card {
-  background: #111;
-  border: 1px solid #222;
-  padding: 25px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-  border-color: #c9a646;
-}
-
-/* FEATURED CARD */
-.featured-service {
-  border: 1px solid #c9a646;
-}
-
-.service-badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #c9a646;
-  color: black;
-  font-size: 10px;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-weight: bold;
-}
-
-/* ICON */
-.service-icon {
-  font-size: 24px;
-  margin-bottom: 12px;
-  display: block;
-}
-
-/* TITLE */
-.service-name {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-/* DESCRIPTION */
-.service-desc {
-  font-size: 14px;
-  color: #bbb;
-  line-height: 1.6;
-}
-
-  /* ── PROJECTS ── */
+  .cert-icon { width: 36px; height: 36px; min-width: 36px; background: rgba(212,160,23,0.12); border: 1px solid rgba(212,160,23,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+  .cert-text strong { display: block; font-size: 0.9rem; font-weight: 500; color: var(--white); margin-bottom: 2px; }
+  .cert-text span { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
+  .gstin-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.2); padding: 0.35rem 0.8rem; border-radius: 2px; font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-top: 1rem; }
+  .gstin-badge strong { color: var(--gold); }
+ 
+  /* SERVICES */
+  #services { background: var(--section-mid); }
+  .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1rem; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5px; background: rgba(212,160,23,0.08); border: 1px solid rgba(212,160,23,0.1); }
+  .service-card { background: var(--section-mid); padding: 2rem; transition: background 0.3s; position: relative; overflow: hidden; }
+  .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; width: 0; background: var(--gold); transition: width 0.4s; }
+  .service-card:hover { background: var(--card-bg); }
+  .service-card:hover::after { width: 100%; }
+  .service-card.featured-service { background: linear-gradient(135deg, rgba(212,160,23,0.1) 0%, var(--section-mid) 100%); border-bottom: 2px solid var(--gold); }
+  .service-badge { display: inline-block; font-size: 0.62rem; background: var(--gold); color: var(--black); padding: 0.2rem 0.5rem; border-radius: 2px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 0.8rem; }
+  .service-icon { font-size: 1.6rem; margin-bottom: 1rem; display: block; }
+  .service-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--white); margin-bottom: 0.6rem; }
+  .service-desc { font-size: 0.83rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+ 
+  /* TEAM */
+  #team { background: var(--section-dark); }
+  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3.5rem; }
+  .team-card { background: var(--card-bg); border: 1px solid rgba(212,160,23,0.15); border-radius: 4px; padding: 2.5rem; transition: border-color 0.3s; }
+  .team-card:hover { border-color: rgba(212,160,23,0.4); }
+  .team-avatar { width: 64px; height: 64px; background: rgba(212,160,23,0.15); border: 2px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold); margin-bottom: 1.2rem; }
+  .team-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .team-title { font-size: 0.8rem; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.2rem; }
+  .team-bio { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.8; font-weight: 300; margin-bottom: 1.5rem; }
+  .team-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.2rem; }
+  .team-tag { font-size: 0.72rem; padding: 0.3rem 0.7rem; background: rgba(212,160,23,0.1); border: 1px solid rgba(212,160,23,0.25); color: var(--gold); border-radius: 2px; }
+  .team-contact a { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; font-weight: 500; }
+  .team-contact a:hover { color: var(--gold); }
+ 
+  /* PROJECTS */
   #projects { background: var(--section-mid); }
-  .projects-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem;
-  }
-  .project-filters {
-    display: flex; gap: 0.5rem; flex-wrap: wrap;
-    margin-bottom: 2rem;
-  }
-  .filter-btn {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.15);
-    color: rgba(255,255,255,0.6);
-    padding: 0.4rem 1rem;
-    font-size: 0.78rem;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 2px;
-    font-family: 'DM Sans', sans-serif;
-    transition: all 0.2s;
-  }
-  .filter-btn.active, .filter-btn:hover {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--black);
-  }
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .project-card {
-    background: var(--card-bg);
-    border: 1px solid rgba(212,160,23,0.1);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: transform 0.3s, border-color 0.3s;
-  }
-  .project-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(212,160,23,0.35);
-  }
-  .project-img {
-    height: 180px;
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
+  .projects-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
+  .project-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .filter-btn { background: transparent; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); padding: 0.4rem 1rem; font-size: 0.78rem; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; border-radius: 2px; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+  .filter-btn.active, .filter-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--black); }
+  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
+  .project-card { background: var(--card-bg); border: 1px solid rgba(212,160,23,0.1); border-radius: 4px; overflow: hidden; transition: transform 0.3s, border-color 0.3s; display: flex; flex-direction: column; }
+  .project-card:hover { transform: translateY(-4px); border-color: rgba(212,160,23,0.35); }
+  .project-img { height: 160px; background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); display: flex; align-items: center; justify-content: center; position: relative; }
   .project-img-icon { font-size: 3rem; opacity: 0.3; }
-  .project-img-label {
-    position: absolute; top: 0.8rem; right: 0.8rem;
-    background: var(--gold);
-    color: var(--black);
-    font-size: 0.65rem;
-    font-weight: 700;
-    padding: 0.25rem 0.6rem;
-    border-radius: 2px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+  .project-img-label { position: absolute; top: 0.8rem; right: 0.8rem; background: var(--gold); color: var(--black); font-size: 0.65rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 2px; text-transform: uppercase; }
   .project-body { padding: 1.2rem 1.4rem; }
-  .project-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 0.4rem;
-  }
-  .project-loc {
-    font-size: 0.75rem;
-    color: var(--gold);
-    margin-bottom: 0.7rem;
-    letter-spacing: 0.5px;
-  }
-  .project-desc {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.45);
-    line-height: 1.65;
-  }
-
-  /* ── WHY US ── */
+  .project-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .project-loc { font-size: 0.75rem; color: var(--gold); margin-bottom: 0.7rem; }
+  .project-desc { font-size: 0.8rem; color: rgba(255,255,255,0.45); line-height: 1.65; }
+ 
+  /* Projects Drive CTA */
+  .projects-drive-cta { background: var(--card-bg); border: 1px solid rgba(212,160,23,0.25); border-radius: 8px; padding: 3rem; text-align: center; position: relative; overflow: hidden; }
+  .projects-drive-cta::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(212,160,23,0.05) 0%, transparent 60%); pointer-events: none; }
+  .projects-drive-cta h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.7rem; }
+  .projects-drive-cta h3 span { color: var(--gold); }
+  .projects-drive-cta p { color: rgba(255,255,255,0.5); font-size: 0.95rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .drive-stats { display: flex; justify-content: center; gap: 3rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .drive-stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--gold); display: block; }
+  .drive-stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; }
+  .drive-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-drive { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold); color: var(--black); padding: 0.9rem 2rem; font-size: 0.9rem; font-weight: 700; text-decoration: none; border-radius: 2px; transition: all 0.2s; text-transform: uppercase; }
+  .btn-drive:hover { background: var(--gold-light); transform: translateY(-2px); }
+ 
+  /* WHY US */
   #why { background: var(--section-dark); }
-  .why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    margin-top: 3.5rem;
-  }
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3.5rem; }
   .why-list { display: flex; flex-direction: column; gap: 1.5rem; }
-  .why-item {
-    display: flex; gap: 1.2rem; align-items: flex-start;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
+  .why-item { display: flex; gap: 1.2rem; align-items: flex-start; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
   .why-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .why-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 900;
-    color: rgba(212,160,23,0.2);
-    line-height: 1;
-    min-width: 40px;
-  }
-  .why-text strong {
-    display: block;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--white);
-    margin-bottom: 0.3rem;
-  }
-  .why-text p {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.7;
-    font-weight: 300;
-  }
-  .why-visual {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-  .why-stat {
-    background: var(--card-bg);
-    border: 1px solid rgba(212,160,23,0.12);
-    border-radius: 4px;
-    padding: 1.8rem 1.2rem;
-    text-align: center;
-    transition: border-color 0.3s;
-  }
+  .why-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: rgba(212,160,23,0.2); line-height: 1; min-width: 40px; }
+  .why-text strong { display: block; font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .why-text p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.7; font-weight: 300; }
+  .why-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .why-stat { background: var(--card-bg); border: 1px solid rgba(212,160,23,0.12); border-radius: 4px; padding: 1.8rem 1.2rem; text-align: center; transition: border-color 0.3s; }
   .why-stat:hover { border-color: rgba(212,160,23,0.4); }
-  .why-stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: var(--gold);
-    display: block;
-    line-height: 1;
-    margin-bottom: 0.4rem;
-  }
-  .why-stat-text {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.45);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .why-stat.featured {
-    grid-column: span 2;
-    background: linear-gradient(135deg, rgba(212,160,23,0.1) 0%, rgba(212,160,23,0.03) 100%);
-    border-color: rgba(212,160,23,0.3);
-  }
-  .why-stat.featured .why-stat-num { font-size: 3rem; }
-
-  /* ── CONTACT ── */
+  .why-stat-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: var(--gold); display: block; line-height: 1; margin-bottom: 0.4rem; }
+  .why-stat-text { font-size: 0.75rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; }
+  .why-stat.featured { grid-column: span 2; background: linear-gradient(135deg, rgba(212,160,23,0.08) 0%, rgba(212,160,23,0.02) 100%); border-color: rgba(212,160,23,0.25); }
+  .why-stat.featured .why-stat-num { font-size: 2.8rem; }
+ 
+  /* CONTACT */
   #contact { background: var(--section-mid); }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-top: 3.5rem;
-  }
-  .contact-info { }
-  .contact-item {
-    display: flex; gap: 1rem; align-items: flex-start;
-    margin-bottom: 2rem;
-  }
-  .contact-icon {
-    width: 44px; height: 44px; min-width: 44px;
-    background: rgba(212,160,23,0.1);
-    border: 1px solid rgba(212,160,23,0.3);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem;
-  }
-  .contact-item-label {
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--gold);
-    margin-bottom: 0.3rem;
-  }
-  .contact-item-value {
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.8);
-    line-height: 1.5;
-  }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3.5rem; }
+  .contact-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 2rem; }
+  .contact-icon { width: 44px; height: 44px; min-width: 44px; background: rgba(212,160,23,0.1); border: 1px solid rgba(212,160,23,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .contact-item-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); margin-bottom: 0.3rem; }
+  .contact-item-value { font-size: 0.95rem; color: rgba(255,255,255,0.8); line-height: 1.6; }
   .contact-item-value a { color: rgba(255,255,255,0.8); text-decoration: none; }
   .contact-item-value a:hover { color: var(--gold); }
-
-  .contact-form { background: var(--card-bg); border: 1px solid rgba(212,160,23,0.15); border-radius: 4px; padding: 2rem; }
-  .form-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-  }
+  .cal-booking-box { background: var(--card-bg); border: 1px solid rgba(212,160,23,0.2); border-radius: 8px; padding: 2rem; text-align: center; }
+  .cal-booking-box h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .cal-booking-box h3 span { color: var(--gold); }
+  .cal-booking-box p { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 1.8rem; line-height: 1.7; }
+  .cal-slots { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1.5rem; }
+  .cal-slot { background: rgba(212,160,23,0.06); border: 1px solid rgba(212,160,23,0.18); border-radius: 4px; padding: 0.8rem; text-align: left; }
+  .cal-slot-type { font-size: 0.7rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.3rem; }
+  .cal-slot-title { font-size: 0.85rem; font-weight: 500; margin-bottom: 0.2rem; }
+  .cal-slot-dur { font-size: 0.7rem; color: rgba(255,255,255,0.35); }
+  .btn-cal { display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: var(--gold); color: var(--black); padding: 1rem 2rem; font-size: 0.9rem; font-weight: 700; text-decoration: none; border-radius: 2px; transition: all 0.2s; text-transform: uppercase; width: 100%; }
+  .btn-cal:hover { background: var(--gold-light); transform: translateY(-2px); }
+ 
+  /* FORM SECTION */
+  .contact-form-section { background: var(--section-dark); padding: 5rem 5%; }
+  .contact-form-inner { max-width: 720px; margin: 0 auto; }
+  .contact-form { background: var(--card-bg); border: 1px solid rgba(212,160,23,0.15); border-radius: 4px; padding: 2.5rem; }
+  .form-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .form-title span { color: var(--gold); }
+  .form-subtitle { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-bottom: 2rem; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .form-group { margin-bottom: 1rem; }
-  .form-group label {
-    display: block;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 0.4rem;
-  }
-  .form-group input, .form-group textarea, .form-group select {
-    width: 100%;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 2px;
-    padding: 0.7rem 0.9rem;
-    color: var(--white);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    transition: border-color 0.2s;
-    outline: none;
-  }
-  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-    border-color: var(--gold);
-  }
-  .form-group textarea { height: 100px; resize: vertical; }
+  .form-group label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.45); margin-bottom: 0.4rem; }
+  .form-group input, .form-group textarea, .form-group select { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; padding: 0.75rem 0.9rem; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; transition: border-color 0.2s; outline: none; }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--gold); }
+  .form-group textarea { height: 110px; resize: vertical; }
   .form-group select option { background: var(--black); }
-  .form-submit {
-    width: 100%;
-    background: var(--gold);
-    color: var(--black);
-    border: none;
-    padding: 0.9rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
-    margin-top: 0.5rem;
-  }
+  .form-submit { width: 100%; background: var(--gold); color: var(--black); border: none; padding: 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 2px; cursor: pointer; transition: all 0.2s; margin-top: 0.5rem; }
   .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: #0a0a0a;
-    padding: 3rem 5%;
-    border-top: 1px solid rgba(212,160,23,0.15);
-  }
-  .footer-inner {
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 1.5rem;
-  }
-  .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
+  .form-note { font-size: 0.75rem; color: rgba(255,255,255,0.3); text-align: center; margin-top: 0.8rem; line-height: 1.6; }
+  .form-note a { color: var(--gold); text-decoration: none; }
+ 
+  /* FOOTER */
+  footer { background: #0a0a0a; padding: 3rem 5%; border-top: 1px solid rgba(212,160,23,0.15); }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; }
   .footer-logo span { color: var(--gold); }
-  .footer-copy {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.35);
-    text-align: center;
-  }
+  .footer-tagline { font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 0.3rem; }
+  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.35); text-align: center; }
   .footer-links { display: flex; gap: 1.5rem; }
-  .footer-links a {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.4);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--gold); }
-
-  /* ── GSTIN BADGE ── */
-  .gstin-badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: rgba(212,160,23,0.08);
-    border: 1px solid rgba(212,160,23,0.2);
-    padding: 0.35rem 0.8rem;
-    border-radius: 2px;
-    font-size: 0.72rem;
-    color: rgba(255,255,255,0.45);
-    letter-spacing: 0.5px;
-    margin-top: 1rem;
-  }
-  .gstin-badge strong { color: var(--gold); font-weight: 600; }
-
-  /* ── FLOATING CTA ── */
-  .whatsapp-float {
-    position: fixed; bottom: 2rem; right: 2rem; z-index: 99;
-    width: 54px; height: 54px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-    box-shadow: 0 4px 15px rgba(37,211,102,0.35);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(37,211,102,0.5); }
-
-  /* ── ANIMATIONS ── */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
+ 
+  /* WHATSAPP FLOAT */
+  .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 99; width: 54px; height: 54px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; text-decoration: none; box-shadow: 0 4px 15px rgba(37,211,102,0.35); transition: transform 0.2s; }
+  .whatsapp-float:hover { transform: scale(1.1); }
+ 
+  /* ANIMATIONS */
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+ 
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
-    .nav-links.open {
-      display: flex; flex-direction: column; position: absolute;
-      top: 70px; left: 0; right: 0; background: #111;
-      padding: 1.5rem 5%;
-      border-bottom: 1px solid rgba(212,160,23,0.15);
-    }
-    .about-grid, .team-grid, .why-grid, .contact-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
+    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 70px; left: 0; right: 0; background: #111; padding: 1.5rem 5%; border-bottom: 1px solid rgba(212,160,23,0.15); }
+    .about-grid, .team-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .projects-grid { grid-template-columns: 1fr 1fr; }
-    .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
     .form-row { grid-template-columns: 1fr; }
     .about-highlights { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
     section { padding: 4rem 5%; }
     .projects-grid { grid-template-columns: 1fr; }
-    .why-visual { grid-template-columns: 1fr 1fr; }
-    .why-stat.featured { grid-column: span 2; }
+    .cta-banner { flex-direction: column; text-align: center; }
+    .cta-banner-actions { justify-content: center; }
     .footer-inner { flex-direction: column; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
+    .cal-slots { grid-template-columns: 1fr; }
+    .drive-stats { gap: 1.5rem; }
   }
 </style>
 </head>
 <body>
-
+ 
 <!-- NAVBAR -->
 <nav id="navbar">
   <div class="nav-logo">NDNS<span>Engineers</span></div>
@@ -760,127 +276,176 @@
     <li><a href="#team">Team</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#why">Why Us</a></li>
-    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    <li><a href="#contact" class="nav-cta">Book Consultation</a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
 </nav>
-
-<!-- HERO -->
+ 
+<!-- ═══ HERO ═══ -->
 <section id="hero">
   <div class="hero-grid-bg"></div>
-  <div class="hero-accent"></div>
-  <div class="hero-content">
-    <div class="hero-tag">Civil &amp; Structural Consultants · Hubli, Karnataka</div>
+  <div class="hero-content fade-up">
+    <div class="hero-tag">Structural Design &amp; Consultants</div>
     <h1 class="hero-title">
-      Delivering <em>Safe, Efficient</em><br>
-      &amp; Innovative<br>
-      Structural Solutions
+      Delivering <em>Safe,<br>Efficient</em> &amp;<br>
+      Innovative Structural<br>Solutions
     </h1>
-    <p class="hero-sub">
-      NDNS Engineers is your one-stop partner for structural design, architectural consultancy,
-      construction, and project management — from residential villas to international infrastructure.
-    </p>
+    <p class="hero-sub">NDNS Engineers — your one-stop partner for structural design, architectural consultancy, and construction. Trusted globally for 15+ years of engineering excellence.</p>
     <div class="hero-actions">
-      <a href="#projects" class="btn-primary">View Our Projects</a>
-      <a href="#contact" class="btn-outline">Consult Us Free</a>
+      <a href="https://cal.com/ndns-engineers-zhkajx" target="_blank" class="btn-primary">📅 Book Free Consultation</a>
+      <a href="tel:+919986259547" class="btn-outline">📞 Call Now</a>
     </div>
     <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">12+</div>
-        <div class="stat-label">Years Experience</div>
+      <div class="stat-item"><div class="stat-num">15+</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat-item"><div class="stat-num">5000+</div><div class="stat-label">Projects Delivered</div></div>
+      <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label">Turnkey Projects</div></div>
+    </div>
+  </div>
+ 
+  <!-- RIGHT VISUAL -->
+  <div class="hero-visual">
+    <div class="hero-visual-inner">
+      <div class="hero-svg-card">
+        <div class="live-badge"><span class="pulse-dot"></span>Structural Analysis Live</div>
+        <div class="hero-card-label">RCC Frame — 3-Bay · 3-Storey Structure</div>
+        <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <defs>
+            <linearGradient id="gG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#D4A017;stop-opacity:0.9"/><stop offset="100%" style="stop-color:#F0C040;stop-opacity:0.6"/></linearGradient>
+            <linearGradient id="cG" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#4a4a4a"/><stop offset="100%" style="stop-color:#2a2a2a"/></linearGradient>
+            <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="6" orient="auto"><path d="M0,0 L3,6 L6,0" fill="none" stroke="#D4A017" stroke-width="1.5"/></marker>
+          </defs>
+          <!-- Ground -->
+          <rect x="20" y="255" width="360" height="5" rx="1" fill="#333"/>
+          <line x1="30" y1="260" x2="20" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="50" y1="260" x2="40" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="70" y1="260" x2="60" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="90" y1="260" x2="80" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="110" y1="260" x2="100" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="130" y1="260" x2="120" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="150" y1="260" x2="140" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="170" y1="260" x2="160" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="190" y1="260" x2="180" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="210" y1="260" x2="200" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="230" y1="260" x2="220" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="250" y1="260" x2="240" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="270" y1="260" x2="260" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="290" y1="260" x2="280" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="310" y1="260" x2="300" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="330" y1="260" x2="320" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="350" y1="260" x2="340" y2="270" stroke="#444" stroke-width="1"/>
+          <line x1="370" y1="260" x2="360" y2="270" stroke="#444" stroke-width="1"/>
+          <!-- Columns -->
+          <rect x="54" y="58" width="14" height="197" fill="url(#cG)" rx="1"/>
+          <rect x="144" y="58" width="14" height="197" fill="url(#cG)" rx="1"/>
+          <rect x="240" y="58" width="14" height="197" fill="url(#cG)" rx="1"/>
+          <rect x="330" y="58" width="14" height="197" fill="url(#cG)" rx="1"/>
+          <!-- Beams -->
+          <rect x="54" y="192" width="290" height="9" fill="url(#gG)" rx="1"/>
+          <rect x="54" y="128" width="290" height="9" fill="url(#gG)" rx="1"/>
+          <rect x="54" y="58" width="290" height="9" fill="url(#gG)" rx="1"/>
+          <!-- Bracing diagonals -->
+          <line x1="68" y1="58" x2="144" y2="128" stroke="rgba(212,160,23,0.28)" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <line x1="158" y1="58" x2="240" y2="128" stroke="rgba(212,160,23,0.28)" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <line x1="254" y1="58" x2="330" y2="128" stroke="rgba(212,160,23,0.28)" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <line x1="68" y1="128" x2="144" y2="192" stroke="rgba(212,160,23,0.18)" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <line x1="158" y1="128" x2="240" y2="192" stroke="rgba(212,160,23,0.18)" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <line x1="254" y1="128" x2="330" y2="192" stroke="rgba(212,160,23,0.18)" stroke-width="1.5" stroke-dasharray="4,3"/>
+          <!-- Slab fills -->
+          <rect x="68" y="67" width="76" height="61" fill="rgba(212,160,23,0.03)" stroke="rgba(212,160,23,0.07)" stroke-width="0.5"/>
+          <rect x="158" y="67" width="82" height="61" fill="rgba(212,160,23,0.03)" stroke="rgba(212,160,23,0.07)" stroke-width="0.5"/>
+          <rect x="254" y="67" width="76" height="61" fill="rgba(212,160,23,0.03)" stroke="rgba(212,160,23,0.07)" stroke-width="0.5"/>
+          <rect x="68" y="137" width="76" height="55" fill="rgba(212,160,23,0.02)" stroke="rgba(212,160,23,0.05)" stroke-width="0.5"/>
+          <rect x="158" y="137" width="82" height="55" fill="rgba(212,160,23,0.02)" stroke="rgba(212,160,23,0.05)" stroke-width="0.5"/>
+          <rect x="254" y="137" width="76" height="55" fill="rgba(212,160,23,0.02)" stroke="rgba(212,160,23,0.05)" stroke-width="0.5"/>
+          <!-- Joint nodes -->
+          <circle cx="61" cy="63" r="4" fill="#D4A017" opacity="0.9"/>
+          <circle cx="151" cy="63" r="4" fill="#D4A017" opacity="0.9"/>
+          <circle cx="247" cy="63" r="4" fill="#D4A017" opacity="0.9"/>
+          <circle cx="337" cy="63" r="4" fill="#D4A017" opacity="0.9"/>
+          <circle cx="61" cy="133" r="4" fill="#D4A017" opacity="0.65"/>
+          <circle cx="151" cy="133" r="4" fill="#D4A017" opacity="0.65"/>
+          <circle cx="247" cy="133" r="4" fill="#D4A017" opacity="0.65"/>
+          <circle cx="337" cy="133" r="4" fill="#D4A017" opacity="0.65"/>
+          <circle cx="61" cy="197" r="4" fill="#D4A017" opacity="0.45"/>
+          <circle cx="151" cy="197" r="4" fill="#D4A017" opacity="0.45"/>
+          <circle cx="247" cy="197" r="4" fill="#D4A017" opacity="0.45"/>
+          <circle cx="337" cy="197" r="4" fill="#D4A017" opacity="0.45"/>
+          <!-- Load arrows -->
+          <line x1="100" y1="24" x2="100" y2="56" stroke="#D4A017" stroke-width="1.5" marker-end="url(#arr)"/>
+          <line x1="195" y1="24" x2="195" y2="56" stroke="#D4A017" stroke-width="1.5" marker-end="url(#arr)"/>
+          <line x1="292" y1="24" x2="292" y2="56" stroke="#D4A017" stroke-width="1.5" marker-end="url(#arr)"/>
+          <text x="80" y="19" fill="rgba(212,160,23,0.6)" font-size="7" font-family="monospace">DL+LL</text>
+          <text x="176" y="19" fill="rgba(212,160,23,0.6)" font-size="7" font-family="monospace">DL+LL</text>
+          <text x="272" y="19" fill="rgba(212,160,23,0.6)" font-size="7" font-family="monospace">DL+LL</text>
+          <!-- Dim line -->
+          <line x1="28" y1="58" x2="28" y2="255" stroke="rgba(212,160,23,0.35)" stroke-width="1"/>
+          <line x1="23" y1="58" x2="33" y2="58" stroke="rgba(212,160,23,0.35)" stroke-width="1"/>
+          <line x1="23" y1="255" x2="33" y2="255" stroke="rgba(212,160,23,0.35)" stroke-width="1"/>
+          <text x="8" y="162" fill="rgba(212,160,23,0.6)" font-size="8" font-family="monospace" transform="rotate(-90,8,162)">H = 12.5m</text>
+          <!-- Floor labels -->
+          <text x="358" y="200" fill="rgba(255,255,255,0.25)" font-size="8" font-family="monospace">FL1</text>
+          <text x="358" y="136" fill="rgba(255,255,255,0.25)" font-size="8" font-family="monospace">FL2</text>
+          <text x="358" y="66" fill="rgba(255,255,255,0.25)" font-size="8" font-family="monospace">FL3</text>
+        </svg>
+        <!-- Legend -->
+        <div style="display:flex;gap:1.2rem;margin-top:0.8rem;flex-wrap:wrap;">
+          <span style="display:flex;align-items:center;gap:5px;font-size:0.68rem;color:rgba(255,255,255,0.38);"><span style="width:16px;height:3px;background:#D4A017;border-radius:1px;display:inline-block;"></span>Beam</span>
+          <span style="display:flex;align-items:center;gap:5px;font-size:0.68rem;color:rgba(255,255,255,0.38);"><span style="width:6px;height:12px;background:#4a4a4a;border-radius:1px;display:inline-block;"></span>Column</span>
+          <span style="display:flex;align-items:center;gap:5px;font-size:0.68rem;color:rgba(255,255,255,0.38);"><span style="width:8px;height:8px;background:#D4A017;border-radius:50%;display:inline-block;"></span>Node</span>
+          <span style="display:flex;align-items:center;gap:5px;font-size:0.68rem;color:rgba(255,255,255,0.38);"><span style="width:16px;border-top:2px dashed rgba(212,160,23,0.5);display:inline-block;"></span>Brace</span>
+        </div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">50+</div>
-        <div class="stat-label">Projects Delivered</div>
+      <!-- Floating cards -->
+      <div class="hero-float-card float-top">
+        <div class="float-text">🏆 Award Winning</div>
+        <div class="float-name">Best Smart Class India</div>
+        <div class="float-text">Times of India Featured</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">3</div>
-        <div class="stat-label">Countries Served</div>
+      <div class="hero-float-card float-bottom">
+        <div class="float-num">5000+</div>
+        <div class="float-text">Structural Projects</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">6+</div>
-        <div class="stat-label">States in India</div>
+      <div class="hero-float-card float-mid">
+        <div class="float-text">🌍 International</div>
+        <div class="float-name">Doha Metro, Qatar</div>
+        <div class="float-text">IMAR Project</div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ABOUT -->
+ 
+<!-- ═══ ABOUT ═══ -->
 <section id="about">
   <div class="section-label">Who We Are</div>
-  <h2 class="section-title">Engineering Excellence<br>Since 2013</h2>
+  <h2 class="section-title">Engineering Excellence<br>Since 2010</h2>
   <div class="gold-line"></div>
   <div class="about-grid fade-up">
     <div class="about-text">
-      <p>NDNS Engineers is a civil engineering consultancy providing structural and building construction services for residential, commercial, and industrial projects. Founded in Hubli and operating across India and internationally, we bring over 12 years of field-tested expertise to every project.</p>
-      <p>We believe in delivering services that are functional, economical, and innovative — with an uncompromising commitment to quality and timely delivery. Our international footprint includes projects in Qatar, Nepal, and the Middle East.</p>
-      <p>Our office is located at Marvel Artiza, Vidyanagar, Hubli — one of the city's landmark green buildings.</p>
+      <p>NDNS Engineers is a structural design and civil engineering consultancy providing services for residential, commercial, and industrial projects worldwide. Founded in 2010, we bring over 15 years of field-tested expertise to every project.</p>
+      <p>Our core strength is <strong style="color:var(--gold);">Structural Design &amp; Consulting</strong> — we have designed and delivered 5000+ structural projects across India and internationally, including landmark work in Qatar and Nepal.</p>
+      <p>We believe in delivering services that are functional, economical, and innovative — with an uncompromising commitment to quality and timely delivery.</p>
       <div class="about-highlights">
-        <div class="highlight-item">
-          <div class="highlight-title">Structural Design</div>
-          <div class="highlight-text">RCC, Steel &amp; Composite — analysed for seismic and wind loads</div>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-title">International Projects</div>
-          <div class="highlight-text">Qatar Doha Metro, Nepal, Middle East facade structures</div>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-title">Architecture &amp; Interiors</div>
-          <div class="highlight-text">Vastu-compliant, 3D design, modern artistic concepts</div>
-        </div>
-        <div class="highlight-item">
-          <div class="highlight-title">Turnkey Delivery</div>
-          <div class="highlight-text">End-to-end from planning &amp; approval to final handover</div>
-        </div>
+        <div class="highlight-item"><div class="highlight-title">Core: Structural Design</div><div class="highlight-text">RCC, Steel &amp; Composite — analysed for seismic and wind loads per IS codes</div></div>
+        <div class="highlight-item"><div class="highlight-title">International Projects</div><div class="highlight-text">Qatar Doha Metro, Nepal, Middle East facade structures</div></div>
+        <div class="highlight-item"><div class="highlight-title">Architecture &amp; Interiors</div><div class="highlight-text">Vastu-compliant, 3D design, modern artistic concepts</div></div>
+        <div class="highlight-item"><div class="highlight-title">Turnkey Delivery</div><div class="highlight-text">20+ turnkey projects — end-to-end from planning to final handover</div></div>
       </div>
     </div>
     <div class="about-visual">
       <div class="about-visual-title">Our <span>Credentials</span></div>
-      <div class="about-cert">
-        <div class="cert-icon">🎓</div>
-        <div class="cert-text">
-          <strong>M.Tech – CAD Structures, VTU</strong>
-          <span>S.D.M. College of Engineering | Both founders post-graduate qualified</span>
-        </div>
-      </div>
-      <div class="about-cert">
-        <div class="cert-icon">🏗️</div>
-        <div class="cert-text">
-          <strong>Structural Consultant – IMAR, Qatar</strong>
-          <span>Doha Metro Railway facades, balustrades &amp; glass walls</span>
-        </div>
-      </div>
-      <div class="about-cert">
-        <div class="cert-icon">🏆</div>
-        <div class="cert-text">
-          <strong>2nd Prize – Best Smart Class in India</strong>
-          <span>Lamington School, Hubli — Featured in Times of India</span>
-        </div>
-      </div>
-      <div class="about-cert">
-        <div class="cert-icon">✈️</div>
-        <div class="cert-text">
-          <strong>Kempegowda International Airport T2</strong>
-          <span>Hoarding &amp; facade design for Brigade Group, Bengaluru</span>
-        </div>
-      </div>
-      <div class="about-cert">
-        <div class="cert-icon">🏢</div>
-        <div class="cert-text">
-          <strong>Member – Structural Engineers Association</strong>
-          <span>Association of Civil Engineers, Karnataka</span>
-        </div>
-      </div>
-      <div class="gstin-badge">
-        GSTIN: <strong>29ANSPN6989Q1ZA</strong>
-      </div>
+      <div class="about-cert"><div class="cert-icon">🎓</div><div class="cert-text"><strong>M.Tech – CAD Structures, VTU</strong><span>S.D.M. College of Engineering · Both founders post-graduate qualified</span></div></div>
+      <div class="about-cert"><div class="cert-icon">🏗️</div><div class="cert-text"><strong>Structural Consultant – IMAR, Qatar</strong><span>Doha Metro Railway facades, balustrades &amp; glass walls</span></div></div>
+      <div class="about-cert"><div class="cert-icon">🏆</div><div class="cert-text"><strong>2nd Prize – Best Smart Class in India</strong><span>Lamington School, Hubli — Featured in Times of India</span></div></div>
+      <div class="about-cert"><div class="cert-icon">✈️</div><div class="cert-text"><strong>Kempegowda International Airport T2</strong><span>Hoarding &amp; facade design for Brigade Group, Bengaluru</span></div></div>
+      <div class="about-cert"><div class="cert-icon">🏢</div><div class="cert-text"><strong>Member – Structural Engineers Association</strong><span>Association of Civil Engineers, Karnataka</span></div></div>
+      <div class="gstin-badge">GSTIN: <strong>29ANSPN6989Q1ZA</strong></div>
     </div>
   </div>
 </section>
-
-<!-- SERVICES -->
+ 
+<!-- ═══ SERVICES ═══ -->
 <section id="services">
   <div class="services-header fade-up">
     <div>
@@ -888,60 +453,34 @@
       <h2 class="section-title">Our Services</h2>
       <div class="gold-line"></div>
     </div>
-    <p class="section-sub" style="max-width:340px; text-align:right;">
-      A complete civil engineering ecosystem — from design to delivery.
-    </p>
+    <p class="section-sub" style="max-width:300px;text-align:right;">Primary expertise: Structural Design &amp; Consulting — backed by a full suite of civil engineering services.</p>
   </div>
   <div class="services-grid fade-up">
-    <div class="service-card">
-      <span class="service-icon">🏛️</span>
-      <div class="service-name">Architectural Design</div>
-      <div class="service-desc">Modern, Vastu-compliant 3D architectural designs tailored to individual client needs — artistic yet economically grounded.</div>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">📐</span>
-      <div class="service-name">Structural Design</div>
-      <div class="service-desc">RCC, steel, and composite structural engineering designed for seismic zones and wind loads. Safe, code-compliant, cost-effective.</div>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🏗️</span>
-      <div class="service-name">Construction &amp; Contracting</div>
-      <div class="service-desc">Full-scale construction services for residential, commercial, and industrial buildings. Turnkey project delivery available.</div>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🛋️</span>
-      <div class="service-name">Interior Design</div>
-      <div class="service-desc">Functional, aesthetic interiors designed to maximize space and reflect your personal style — residential and commercial.</div>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">📋</span>
-      <div class="service-name">Building Liaison &amp; Approvals</div>
-      <div class="service-desc">End-to-end support for building plan approvals, government liaising, and permitting processes across Karnataka.</div>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">⚡</span>
-      <div class="service-name">MEP Services</div>
-      <div class="service-desc">Mechanical, Electrical, and Plumbing design integrated seamlessly with structural and architectural drawings.</div>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">🔍</span>
-      <div class="service-name">Structural Inspections</div>
-      <div class="service-desc">Third-party consulting, quality checking, and building inspections. Proof checking for existing designs and structures.</div>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">📊</span>
-      <div class="service-name">Project Management</div>
-      <div class="service-desc">Comprehensive project planning, execution monitoring, contractor coordination, and on-site supervision services.</div>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">📏</span>
-      <div class="service-name">Surveying &amp; Quantity Estimation</div>
-      <div class="service-desc">Topographic surveying, levelling, and accurate quantity estimation to keep your project on budget.</div>
-    </div>
+    <div class="service-card featured-service"><span class="service-badge">Core Service</span><span class="service-icon">📐</span><div class="service-name">Structural Design &amp; Consulting</div><div class="service-desc">Our flagship service — RCC, steel, and composite structural engineering designed for seismic zones and wind loads per IS codes. Safe, code-compliant, and cost-effective for residential, commercial, and industrial projects of all scales.</div></div>
+    <div class="service-card"><span class="service-icon">🏛️</span><div class="service-name">Architectural Design</div><div class="service-desc">Modern, Vastu-compliant 3D architectural designs tailored to individual client needs — artistic yet economically grounded.</div></div>
+    <div class="service-card"><span class="service-icon">🏗️</span><div class="service-name">Construction &amp; Contracting</div><div class="service-desc">Full-scale construction services for residential, commercial, and industrial buildings. Turnkey project delivery available.</div></div>
+    <div class="service-card"><span class="service-icon">🛋️</span><div class="service-name">Interior Design</div><div class="service-desc">Functional, aesthetic interiors designed to maximize space and reflect your personal style — residential and commercial.</div></div>
+    <div class="service-card"><span class="service-icon">📋</span><div class="service-name">Building Liaison &amp; Approvals</div><div class="service-desc">End-to-end support for building plan approvals, government liaising, and permitting processes.</div></div>
+    <div class="service-card"><span class="service-icon">⚡</span><div class="service-name">MEP Services</div><div class="service-desc">Mechanical, Electrical, and Plumbing design integrated seamlessly with structural and architectural drawings.</div></div>
+    <div class="service-card"><span class="service-icon">🔍</span><div class="service-name">Structural Inspections &amp; Proof Checking</div><div class="service-desc">Third-party consulting, quality checking, and building inspections. Proof checking for existing designs.</div></div>
+    <div class="service-card"><span class="service-icon">📊</span><div class="service-name">Project Management</div><div class="service-desc">Comprehensive project planning, execution monitoring, contractor coordination, and on-site supervision.</div></div>
+    <div class="service-card"><span class="service-icon">📏</span><div class="service-name">Surveying &amp; Quantity Estimation</div><div class="service-desc">Topographic surveying, levelling, and accurate quantity estimation to keep your project on budget.</div></div>
   </div>
 </section>
-
-<!-- TEAM -->
+ 
+<!-- CTA 1: After Services -->
+<div class="cta-banner fade-up">
+  <div class="cta-banner-text">
+    <h3>Need a <span>Structural Design</span> Quote?</h3>
+    <p>Get a free consultation — residential, commercial, or industrial. We respond within 24 hours.</p>
+  </div>
+  <div class="cta-banner-actions">
+    <a href="https://cal.com/ndns-engineers-zhkajx" target="_blank" class="btn-primary">📅 Book Free Consultation</a>
+    <a href="tel:+918147223034" class="btn-call">📞 Call Er. Sumanth</a>
+  </div>
+</div>
+ 
+<!-- ═══ TEAM ═══ -->
 <section id="team">
   <div class="section-label">Our People</div>
   <h2 class="section-title">The Experts Behind<br>Every Project</h2>
@@ -950,383 +489,241 @@
     <div class="team-card">
       <div class="team-avatar">DN</div>
       <div class="team-name">Er. Dushyanth Nagaraj</div>
-      <div class="team-title">Founder &amp; Principal Engineer · M.Tech (CAD Structures, VTU)</div>
-      <p class="team-bio">A civil and structural engineer with over 12 years of experience, Dushyanth has designed multistoried apartments, industrial structures, retaining walls, water tanks, and swimming pools. He has served as a structural consultant on international projects in Qatar and Nepal, worked as Department Head at ARK Infosolutions Pvt Ltd for Bentley civil software products, and has designed façades for Kempegowda International Airport T2.</p>
-      <div class="team-tags">
-        <span class="team-tag">Structural Design</span>
-        <span class="team-tag">Qatar IMAR / Doha Metro</span>
-        <span class="team-tag">Façade Structures</span>
-        <span class="team-tag">FEA / Bentley</span>
-        <span class="team-tag">Industrial Buildings</span>
-      </div>
+      <div class="team-title">Founder &amp; Principal Structural Engineer · M.Tech (CAD Structures, VTU)</div>
+      <p class="team-bio">A civil and structural engineer with 15+ years of experience. Designed multistoried apartments, industrial structures, retaining walls, water tanks, and swimming pools. Served as structural consultant on international projects in Qatar and Nepal, worked as Department Head at ARK Infosolutions (Bentley civil software), and designed façades for Kempegowda International Airport T2.</p>
+      <div class="team-tags"><span class="team-tag">Structural Design</span><span class="team-tag">Qatar IMAR / Doha Metro</span><span class="team-tag">Façade Structures</span><span class="team-tag">FEA / Bentley</span><span class="team-tag">Industrial Buildings</span></div>
+      <div class="team-contact"><a href="tel:+919986259547">📞 +91 99862 59547</a></div>
     </div>
     <div class="team-card">
       <div class="team-avatar">SN</div>
       <div class="team-name">Er. D. Sumanth Nagraj</div>
       <div class="team-title">Structural Engineer · M.Tech (Structural Engineering)</div>
-      <p class="team-bio">Sumanth is an M.Tech graduate specialising in structural engineering. He supports the technical design team and coordinates with drafting personnel, surveying teams, and site inspectors. He oversees field inspections and ensures structural designs are faithfully executed on site.</p>
-      <div class="team-tags">
-        <span class="team-tag">Structural Inspections</span>
-        <span class="team-tag">Design Coordination</span>
-        <span class="team-tag">Site Supervision</span>
-        <span class="team-tag">Surveying</span>
-      </div>
+      <p class="team-bio">M.Tech graduate specialising in structural engineering. Sumanth oversees field inspections, coordinates with drafting and surveying teams, and ensures structural designs are faithfully executed on site. He is your primary point of contact for project coordination and technical queries.</p>
+      <div class="team-tags"><span class="team-tag">Structural Inspections</span><span class="team-tag">Design Coordination</span><span class="team-tag">Site Supervision</span><span class="team-tag">Surveying</span></div>
+      <div class="team-contact"><a href="tel:+918147223034">📞 +91 81472 23034 — Call or WhatsApp</a></div>
     </div>
   </div>
 </section>
-
-<!-- PROJECTS -->
+ 
+<!-- ═══ PROJECTS ═══ -->
 <section id="projects">
   <div class="projects-header fade-up">
     <div>
       <div class="section-label">Portfolio</div>
       <h2 class="section-title">Selected Projects</h2>
       <div class="gold-line"></div>
+      <p class="section-sub">A glimpse of 5000+ structural projects delivered across India and internationally.</p>
     </div>
   </div>
   <div class="project-filters fade-up">
-    <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
-    <button class="filter-btn" onclick="filterProjects('residential', this)">Residential</button>
-    <button class="filter-btn" onclick="filterProjects('commercial', this)">Commercial</button>
-    <button class="filter-btn" onclick="filterProjects('industrial', this)">Industrial</button>
-    <button class="filter-btn" onclick="filterProjects('international', this)">International</button>
-    <button class="filter-btn" onclick="filterProjects('infrastructure', this)">Infrastructure</button>
+    <button class="filter-btn active" onclick="filterProjects('all',this)">All</button>
+    <button class="filter-btn" onclick="filterProjects('residential',this)">Residential</button>
+    <button class="filter-btn" onclick="filterProjects('commercial',this)">Commercial</button>
+    <button class="filter-btn" onclick="filterProjects('industrial',this)">Industrial</button>
+    <button class="filter-btn" onclick="filterProjects('international',this)">International</button>
+    <button class="filter-btn" onclick="filterProjects('infrastructure',this)">Infrastructure</button>
   </div>
   <div class="projects-grid fade-up" id="projectsGrid">
-    <div class="project-card" data-category="international">
-      <div class="project-img">
-        <span class="project-img-icon">🚇</span>
-        <span class="project-img-label">International</span>
-      </div>
-      <div class="project-body">
-        <div class="project-name">Doha Metro – IMAR Façade Structures</div>
-        <div class="project-loc">📍 Doha, Qatar</div>
-        <div class="project-desc">Structural consultant for Qatar Integrated Railway — inverted balustrades, escalator &amp; elevator claddings, fire-exit staircases, and glass walls for metro stations.</div>
-      </div>
+    <div class="project-card" data-category="international"><div class="project-img"><span class="project-img-icon">🚇</span><span class="project-img-label">International</span></div><div class="project-body"><div class="project-name">Doha Metro – IMAR Façade Structures</div><div class="project-loc">📍 Doha, Qatar</div><div class="project-desc">Inverted balustrades, escalator &amp; elevator claddings, fire-exit staircases, and glass walls for metro stations.</div></div></div>
+    <div class="project-card" data-category="residential"><div class="project-img"><span class="project-img-icon">🏢</span><span class="project-img-label">Residential</span></div><div class="project-body"><div class="project-name">Dollars Enclave – Multistoried Apartment</div><div class="project-loc">📍 Shimoga District, Karnataka</div><div class="project-desc">1,15,000 sq.ft residential complex. Full structural design and on-site supervision for GP Builders.</div></div></div>
+    <div class="project-card" data-category="commercial"><div class="project-img"><span class="project-img-icon">🏫</span><span class="project-img-label">Institutional</span></div><div class="project-body"><div class="project-name">Zia International School</div><div class="project-loc">📍 Bengaluru, Karnataka</div><div class="project-desc">Structural consultant for the school building — complete structural drawings and design.</div></div></div>
+    <div class="project-card" data-category="infrastructure"><div class="project-img"><span class="project-img-icon">🌉</span><span class="project-img-label">Infrastructure</span></div><div class="project-body"><div class="project-name">Multi-Span Box Culvert</div><div class="project-loc">📍 Bijapur District, Karnataka</div><div class="project-desc">Designed a multispan box culvert replacing a flood-damaged structure. Full structural analysis.</div></div></div>
+    <div class="project-card" data-category="residential"><div class="project-img"><span class="project-img-icon">🏨</span><span class="project-img-label">Turnkey</span></div><div class="project-body"><div class="project-name">Smart Stay – Serviced Apartments</div><div class="project-loc">📍 Hubballi, Karnataka</div><div class="project-desc">Turnkey design and construction — architecture, structure, interiors, complete delivery.</div></div></div>
+    <div class="project-card" data-category="commercial"><div class="project-img"><span class="project-img-icon">🎓</span><span class="project-img-label">Award Winning</span></div><div class="project-body"><div class="project-name">Lamington School Smart Class</div><div class="project-loc">📍 Hubli, Karnataka</div><div class="project-desc">2nd Prize — Best Smart Class in India. Featured in Times of India.</div></div></div>
+  </div>
+ 
+  <!-- DRIVE CTA -->
+  <div class="projects-drive-cta fade-up">
+    <h3>View Our Complete <span>Project Portfolio</span></h3>
+    <p>5000+ structural projects across residential, commercial, industrial, infrastructure, and turnkey categories. Browse the full portfolio on our Google Drive.</p>
+    <div class="drive-stats">
+      <div><span class="drive-stat-num">5000+</span><span class="drive-stat-label">Total Projects</span></div>
+      <div><span class="drive-stat-num">20+</span><span class="drive-stat-label">Turnkey Projects</span></div>
+      <div><span class="drive-stat-num">15+</span><span class="drive-stat-label">Years of Work</span></div>
     </div>
-    <div class="project-card" data-category="residential">
-      <div class="project-img">
-        <span class="project-img-icon">🏢</span>
-        <span class="project-img-label">Residential</span>
-      </div>
-      <div class="project-body">
-        <div class="project-name">Dollars Enclave – Multistoried Apartment</div>
-        <div class="project-loc">📍 Shimoga District, Karnataka</div>
-        <div class="project-desc">1,15,000 sq.ft built-up area residential complex. Structural consultant and project supervisor for GP Builders — complete structural design and on-site oversight.</div>
-      </div>
+    <div class="drive-cta-btns">
+      <a href="https://drive.google.com/drive/folders/YOUR_FOLDER_ID_HERE" target="_blank" class="btn-drive">📁 View All Projects on Google Drive</a>
+      <a href="https://cal.com/ndns-engineers-zhkajx" target="_blank" class="btn-outline" style="padding:0.9rem 2rem;">📅 Discuss Your Project</a>
     </div>
-    <div class="project-card" data-category="commercial">
-      <div class="project-img">
-        <span class="project-img-icon">🏫</span>
-        <span class="project-img-label">Institutional</span>
-      </div>
-      <div class="project-body">
-        <div class="project-name">Zia International School</div>
-        <div class="project-loc">📍 Bengaluru, Karnataka</div>
-        <div class="project-desc">Structural consultant for the main school building — comprehensive structural drawings and design for this large institutional project in Bengaluru.</div>
-      </div>
-    </div>
-    <div class="project-card" data-category="infrastructure">
-      <div class="project-img">
-        <span class="project-img-icon">🌉</span>
-        <span class="project-img-label">Infrastructure</span>
-      </div>
-      <div class="project-body">
-        <div class="project-name">Multi-Span Box Culvert – Flood Restoration</div>
-        <div class="project-loc">📍 Bijapur District, Karnataka</div>
-        <div class="project-desc">Designed a multispan box culvert to replace a flood-damaged structure. Included full structural analysis, demolition planning, and new construction drawings.</div>
-      </div>
-    </div>
-    <div class="project-card" data-category="infrastructure">
-      <div class="project-img">
-        <span class="project-img-icon">🏗️</span>
-        <span class="project-img-label">Foundation</span>
-      </div>
-      <div class="project-body">
-        <div class="project-name">Pile Foundation &amp; Pile Cap – Bijapur</div>
-        <div class="project-loc">📍 Bijapur District, Karnataka</div>
-        <div class="project-desc">Deep pile foundation and pile cap design for a major structure in Bijapur District. Structural analysis and site supervision for sub-structure works.</div>
-      </div>
-    </div>
-    <div class="project-card" data-category="residential">
-      <div class="project-img">
-        <span class="project-img-icon">🏨</span>
-        <span class="project-img-label">Turnkey</span>
-      </div>
-      <div class="project-body">
-        <div class="project-name">Smart Stay – Serviced Apartments</div>
-        <div class="project-loc">📍 Hubballi, Karnataka</div>
-        <div class="project-desc">Turnkey design and construction of a modern serviced apartment complex. NDNS handled architecture, structure, interiors, and complete project delivery.</div>
-      </div>
-    </div>
-    <div class="project-card" data-category="commercial">
-      <div class="project-img">
-        <span class="project-img-icon">🎓</span>
-        <span class="project-img-label">Award Winning</span>
-      </div>
-      <div class="project-body">
-        <div class="project-name">Lamington School Smart Class</div>
-        <div class="project-loc">📍 Hubli, Karnataka</div>
-        <div class="project-desc">Innovative smart classroom infrastructure that won the 2nd Prize for Best Smart Class in India. Featured in the Times of India.</div>
-      </div>
-    </div>
-    <div class="project-card" data-category="industrial">
-      <div class="project-img">
-        <span class="project-img-icon">🏭</span>
-        <span class="project-img-label">Industrial</span>
-      </div>
-      <div class="project-body">
-        <div class="project-name">Industrial Structure – Pre-engineered Building</div>
-        <div class="project-loc">📍 Karnataka</div>
-        <div class="project-desc">Structural design for an industrial facility — steel frame pre-engineered building with full structural analysis, drawings, and construction oversight.</div>
-      </div>
-    </div>
-    <div class="project-card" data-category="commercial">
-      <div class="project-img">
-        <span class="project-img-icon">🚗</span>
-        <span class="project-img-label">Partner Project</span>
-      </div>
-      <div class="project-body">
-        <div class="project-name">OLA Meeting Pod Structure</div>
-        <div class="project-loc">📍 India (for Synectics Engineers)</div>
-        <div class="project-desc">Part of the structural design team for OLA's prefabricated meeting pod structure — structural analysis and detailed engineering in partnership with Synectics Engineers.</div>
-      </div>
-    </div>
+    <p style="font-size:0.7rem;color:rgba(255,255,255,0.2);margin-top:1.2rem;">Replace the Drive link above with your actual Google Drive shared folder URL</p>
   </div>
 </section>
-
-<!-- WHY US -->
+ 
+<!-- CTA 2: After Projects -->
+<div class="cta-banner fade-up" style="background:rgba(26,26,26,0.98); border-color:rgba(212,160,23,0.2);">
+  <div class="cta-banner-text">
+    <h3>Let's Build <span>Your Project</span> Together</h3>
+    <p>Talk to Er. Sumanth directly for project queries and coordination.</p>
+  </div>
+  <div class="cta-banner-actions">
+    <a href="tel:+918147223034" class="btn-primary">📞 Call Er. Sumanth — +91 81472 23034</a>
+    <a href="https://wa.me/919986259547?text=Hello%20NDNS%20Engineers%2C%20I%20would%20like%20to%20discuss%20a%20structural%20project." target="_blank" class="btn-whatsapp">💬 WhatsApp Us</a>
+  </div>
+</div>
+ 
+<!-- ═══ WHY US ═══ -->
 <section id="why">
   <div class="section-label">Why Choose NDNS</div>
   <h2 class="section-title">What Sets Us Apart</h2>
   <div class="gold-line"></div>
   <div class="why-grid fade-up">
     <div class="why-list">
-      <div class="why-item">
-        <div class="why-num">01</div>
-        <div class="why-text">
-          <strong>International-Grade Expertise</strong>
-          <p>We have designed structures to American, European, and Indian standards — with hands-on experience in Qatar, Nepal, and the Middle East. Global quality, local understanding.</p>
-        </div>
-      </div>
-      <div class="why-item">
-        <div class="why-num">02</div>
-        <div class="why-text">
-          <strong>Full-Spectrum Services</strong>
-          <p>From concept design and structural analysis to on-site supervision and turnkey delivery — NDNS is your single point of contact for every phase of your project.</p>
-        </div>
-      </div>
-      <div class="why-item">
-        <div class="why-num">03</div>
-        <div class="why-text">
-          <strong>Safety Without Compromise</strong>
-          <p>Every structure is designed accounting for seismic zones, wind loads, and local soil conditions. We never cut corners on structural integrity.</p>
-        </div>
-      </div>
-      <div class="why-item">
-        <div class="why-num">04</div>
-        <div class="why-text">
-          <strong>Economical &amp; Innovative Solutions</strong>
-          <p>We believe good engineering is also efficient engineering. Our designs optimize material use without sacrificing strength — saving clients money at every stage.</p>
-        </div>
-      </div>
+      <div class="why-item"><div class="why-num">01</div><div class="why-text"><strong>Structural Design is Our Core</strong><p>5000+ structural projects and 15 years of expertise — RCC, steel, composite, seismic and wind analysis. Structural design is not just a service; it's our identity.</p></div></div>
+      <div class="why-item"><div class="why-num">02</div><div class="why-text"><strong>International-Grade Expertise</strong><p>Designs to American, European, and Indian standards — hands-on experience in Qatar, Nepal, and the Middle East. Global quality, local understanding.</p></div></div>
+      <div class="why-item"><div class="why-num">03</div><div class="why-text"><strong>Full-Spectrum One-Stop Services</strong><p>From concept design and structural analysis to on-site supervision and turnkey delivery — NDNS is your single point of contact for every project phase.</p></div></div>
+      <div class="why-item"><div class="why-num">04</div><div class="why-text"><strong>Economical Without Compromise</strong><p>Our designs optimize material use without sacrificing strength — saving clients money at every stage while meeting all IS code requirements.</p></div></div>
     </div>
     <div class="why-visual">
-      <div class="why-stat">
-        <span class="why-stat-num">12+</span>
-        <span class="why-stat-text">Years in Practice</span>
-      </div>
-      <div class="why-stat">
-        <span class="why-stat-num">3</span>
-        <span class="why-stat-text">Countries</span>
-      </div>
-      <div class="why-stat">
-        <span class="why-stat-num">50+</span>
-        <span class="why-stat-text">Projects Completed</span>
-      </div>
-      <div class="why-stat">
-        <span class="why-stat-num">9</span>
-        <span class="why-stat-text">Service Verticals</span>
-      </div>
-      <div class="why-stat featured">
-        <span class="why-stat-num">1,15,000 sq.ft</span>
-        <span class="why-stat-text">Largest Single Project Supervised</span>
-      </div>
+      <div class="why-stat"><span class="why-stat-num">15+</span><span class="why-stat-text">Years Since 2010</span></div>
+      <div class="why-stat"><span class="why-stat-num">20+</span><span class="why-stat-text">Turnkey Projects</span></div>
+      <div class="why-stat"><span class="why-stat-num">5K+</span><span class="why-stat-text">Structural Projects</span></div>
+      <div class="why-stat"><span class="why-stat-num">9</span><span class="why-stat-text">Service Verticals</span></div>
+      <div class="why-stat featured"><span class="why-stat-num">1,15,000 sq.ft</span><span class="why-stat-text">Largest Single Project Supervised</span></div>
     </div>
   </div>
 </section>
-
-<!-- CONTACT -->
+ 
+<!-- ═══ CONTACT ═══ -->
 <section id="contact">
   <div class="section-label">Get In Touch</div>
   <h2 class="section-title">Start Your Project<br>With Us Today</h2>
   <div class="gold-line"></div>
   <div class="contact-grid fade-up">
-    <div class="contact-info">
-      <p style="color:rgba(255,255,255,0.55); font-size:1rem; line-height:1.8; font-weight:300; margin-bottom:2.5rem;">
-        Whether you're planning a new home, a commercial building, or need a structural inspection — reach out to NDNS Engineers for a free initial consultation.
-      </p>
+    <div>
+      <p style="color:rgba(255,255,255,0.55);font-size:1rem;line-height:1.8;font-weight:300;margin-bottom:2.5rem;">Whether you need a structural design, building approval, or a full turnkey project — reach out for a free initial consultation.</p>
       <div class="contact-item">
         <div class="contact-icon">📞</div>
-        <div>
-          <div class="contact-item-label">Phone</div>
-          <div class="contact-item-value">
-            <a href="tel:+919986259547">+91 99862 59547</a> (Er. Dushyanth)<br>
-            <a href="tel:+918147223034">+91 81472 23034</a> (Er. Sumanth)
-          </div>
-        </div>
+        <div><div class="contact-item-label">Phone</div><div class="contact-item-value"><a href="tel:+919986259547">+91 99862 59547</a> — Er. Dushyanth<br><a href="tel:+918147223034">+91 81472 23034</a> — Er. Sumanth</div></div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">✉️</div>
-        <div>
-          <div class="contact-item-label">Email</div>
-          <div class="contact-item-value">
-            <a href="mailto:ndnsengineers@gmail.com">ndnsengineers@gmail.com</a>
-          </div>
-        </div>
+        <div><div class="contact-item-label">Email</div><div class="contact-item-value"><a href="mailto:ndnsengineers@gmail.com">ndnsengineers@gmail.com</a></div></div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">📍</div>
-        <div>
-          <div class="contact-item-label">Office Address</div>
-          <div class="contact-item-value">
-            #213, Marvel Artiza, Vidyanagar<br>
-            Hubli – 580021, Karnataka, India
-          </div>
-        </div>
+        <div><div class="contact-item-label">Office</div><div class="contact-item-value">#213, Marvel Artiza, Vidyanagar<br>Hubli – 580021, Karnataka, India</div></div>
       </div>
-      <div class="contact-item">
-        <div class="contact-icon">🕐</div>
-        <div>
-          <div class="contact-item-label">Working Hours</div>
-          <div class="contact-item-value">
-            Mon – Sat: 9:00 AM – 6:00 PM<br>
-            Sunday: By Appointment
-          </div>
-        </div>
-      </div>
+      <a href="tel:+918147223034" class="btn-call" style="margin-top:0.5rem;">📞 Call Er. Sumanth Directly</a>
     </div>
-    <div class="contact-form">
-      <div class="form-title">Request a Free Consultation</div>
+    <div class="cal-booking-box">
+      <h3>Book a <span>Free Consultation</span></h3>
+      <p>Schedule a call, video meeting, or in-office visit with our structural engineering team at your convenient time.</p>
+      <div class="cal-slots">
+        <div class="cal-slot"><div class="cal-slot-type">📞 Phone</div><div class="cal-slot-title">Quick Structural Query</div><div class="cal-slot-dur">15 min · Free</div></div>
+        <div class="cal-slot"><div class="cal-slot-type">💻 Video</div><div class="cal-slot-title">Project Consultation</div><div class="cal-slot-dur">30 min · Free</div></div>
+        <div class="cal-slot"><div class="cal-slot-type">🏢 In-Person</div><div class="cal-slot-title">Office / Site Visit</div><div class="cal-slot-dur">60 min · Free</div></div>
+        <div class="cal-slot"><div class="cal-slot-type">📐 Design</div><div class="cal-slot-title">Structural Review</div><div class="cal-slot-dur">45 min · Free</div></div>
+      </div>
+      <a href="https://cal.com/ndns-engineers-zhkajx" target="_blank" class="btn-cal">📅 Book Your Free Slot on Cal.com</a>
+    </div>
+  </div>
+</section>
+ 
+<!-- ═══ ENQUIRY FORM ═══ -->
+<div class="contact-form-section">
+  <div class="contact-form-inner">
+    <div class="contact-form fade-up">
+      <div class="form-title">Send Us an <span>Enquiry</span></div>
+      <div class="form-subtitle">We'll respond within 24 hours · Sent directly to ndnsengineers@gmail.com</div>
       <div class="form-row">
-        <div class="form-group">
-          <label>Full Name</label>
-          <input type="text" placeholder="Your name">
-        </div>
-        <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="+91 00000 00000">
-        </div>
+        <div class="form-group"><label>Full Name *</label><input type="text" id="f_name" placeholder="Your full name"></div>
+        <div class="form-group"><label>Phone Number *</label><input type="tel" id="f_phone" placeholder="+91 00000 00000"></div>
       </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" placeholder="your@email.com">
-      </div>
+      <div class="form-group"><label>Email Address *</label><input type="email" id="f_email" placeholder="your@email.com"></div>
       <div class="form-group">
         <label>Service Required</label>
-        <select>
+        <select id="f_service">
           <option value="">Select a service...</option>
-          <option>Structural Design (RCC / Steel)</option>
+          <option>Structural Design &amp; Consulting (RCC / Steel)</option>
           <option>Architectural Design</option>
-          <option>Construction / Contracting</option>
+          <option>Construction / Contracting (Turnkey)</option>
           <option>Interior Design</option>
           <option>Building Approvals / Liaison</option>
-          <option>Structural Inspection</option>
+          <option>Structural Inspection / Proof Checking</option>
           <option>Project Management</option>
           <option>Other</option>
         </select>
       </div>
-      <div class="form-group">
-        <label>Project Details</label>
-        <textarea placeholder="Briefly describe your project — location, size, type of structure, timeline..."></textarea>
-      </div>
-      <button class="form-submit" onclick="handleSubmit()">Send Enquiry →</button>
+      <div class="form-group"><label>Project Details</label><textarea id="f_message" placeholder="Describe your project — location, type of structure, size, timeline, any specific requirements..."></textarea></div>
+      <button class="form-submit" onclick="sendEnquiry()">Send Enquiry to NDNS Engineers →</button>
+      <div class="form-note">Clicking above will open your email app pre-filled and addressed to <a href="mailto:ndnsengineers@gmail.com">ndnsengineers@gmail.com</a>. Prefer to call? <a href="tel:+918147223034">+91 81472 23034</a></div>
     </div>
   </div>
-</section>
-
+</div>
+ 
+<!-- CTA 3: Final -->
+<div class="cta-banner fade-up" style="background:linear-gradient(135deg,rgba(212,160,23,0.12) 0%,rgba(212,160,23,0.03) 100%); border-color:rgba(212,160,23,0.3);">
+  <div class="cta-banner-text">
+    <h3>Ready to Start <span>Your Dream Project?</span></h3>
+    <p>15 years · 5000+ projects · Structural design excellence. Let's build something great together.</p>
+  </div>
+  <div class="cta-banner-actions">
+    <a href="https://cal.com/ndns-engineers-zhkajx" target="_blank" class="btn-primary">📅 Schedule Free Consultation</a>
+    <a href="mailto:ndnsengineers@gmail.com" class="btn-call">✉️ Email Us</a>
+    <a href="https://wa.me/919986259547" target="_blank" class="btn-whatsapp">💬 WhatsApp</a>
+  </div>
+</div>
+ 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div>
       <div class="footer-logo">NDNS<span>Engineers</span></div>
-      <div style="font-size:0.78rem; color:rgba(255,255,255,0.3); margin-top:0.4rem;">Civil &amp; Structural Consultants · Hubli, Karnataka</div>
+      <div class="footer-tagline">Structural Design &amp; Consultants · Est. 2010</div>
     </div>
     <div class="footer-copy">
-      © 2024 NDNS Engineers. All rights reserved.<br>
-      <span style="font-size:0.7rem; color:rgba(255,255,255,0.25);">GSTIN: 29ANSPN6989Q1ZA</span>
+      © 2026 NDNS Engineers. All rights reserved.<br>
+      <span style="font-size:0.7rem;color:rgba(255,255,255,0.2);">GSTIN: 29ANSPN6989Q1ZA</span>
     </div>
     <div class="footer-links">
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
+      <a href="mailto:ndnsengineers@gmail.com">Email</a>
     </div>
   </div>
 </footer>
-
+ 
 <!-- WhatsApp Float -->
-<a href="https://wa.me/919986259547?text=Hello%20NDNS%20Engineers%2C%20I%20would%20like%20to%20discuss%20a%20project." class="whatsapp-float" target="_blank" title="Chat on WhatsApp">💬</a>
-
+<a href="https://wa.me/919986259547?text=Hello%20NDNS%20Engineers%2C%20I%20would%20like%20to%20discuss%20a%20structural%20project." class="whatsapp-float" target="_blank" title="WhatsApp Us">💬</a>
+ 
 <script>
-  // Mobile menu
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('open');
-  }
-
-  // Smooth close menu on link click
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    a.addEventListener('click', () => {
-      document.getElementById('navLinks').classList.remove('open');
-    });
-  });
-
-  // Project filter
-  function filterProjects(category, btn) {
+  function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+  document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open')));
+ 
+  function filterProjects(cat, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    document.querySelectorAll('.project-card').forEach(card => {
-      if (category === 'all' || card.dataset.category === category) {
-        card.style.display = 'flex';
-        card.style.flexDirection = 'column';
-      } else {
-        card.style.display = 'none';
-      }
+    document.querySelectorAll('.project-card').forEach(c => {
+      c.style.display = (cat === 'all' || c.dataset.category === cat) ? 'flex' : 'none';
+      if (c.style.display === 'flex') c.style.flexDirection = 'column';
     });
   }
-
-  // Scroll animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-      }
-    });
+ 
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); });
   }, { threshold: 0.1 });
-
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // Navbar scroll effect
+ 
   window.addEventListener('scroll', () => {
-    const nav = document.getElementById('navbar');
-    if (window.scrollY > 80) {
-      nav.style.height = '60px';
-    } else {
-      nav.style.height = '70px';
-    }
+    document.getElementById('navbar').style.height = window.scrollY > 80 ? '60px' : '70px';
   });
-
-  // Form submit handler
-  function handleSubmit() {
+ 
+  function sendEnquiry() {
+    const name = document.getElementById('f_name').value.trim();
+    const phone = document.getElementById('f_phone').value.trim();
+    const email = document.getElementById('f_email').value.trim();
+    const service = document.getElementById('f_service').value;
+    const msg = document.getElementById('f_message').value.trim();
+    if (!name || !phone || !email) { alert('Please fill in your Name, Phone and Email.'); return; }
+    const subject = encodeURIComponent(`New Enquiry from ${name} — NDNS Engineers Website`);
+    const body = encodeURIComponent(`New Project Enquiry — NDNS Engineers Website\n${'─'.repeat(40)}\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service || 'Not specified'}\n${'─'.repeat(40)}\nProject Details:\n${msg || 'No details provided'}\n\nSent from ndnsengineers.com`);
+    window.location.href = `mailto:ndnsengineers@gmail.com?subject=${subject}&body=${body}`;
     const btn = document.querySelector('.form-submit');
-    btn.textContent = '✓ Enquiry Sent! We will contact you shortly.';
-    btn.style.background = '#2a7a2a';
-    btn.style.color = '#fff';
-    setTimeout(() => {
-      btn.textContent = 'Send Enquiry →';
-      btn.style.background = '';
-      btn.style.color = '';
-    }, 4000);
+    btn.textContent = '✓ Email app opened — review and hit Send to complete!';
+    btn.style.background = '#2a6a2a'; btn.style.color = '#fff';
+    setTimeout(() => { btn.textContent = 'Send Enquiry to NDNS Engineers →'; btn.style.background = ''; btn.style.color = ''; }, 5000);
   }
 </script>
 </body>
