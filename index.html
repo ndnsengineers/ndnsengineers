@@ -310,28 +310,102 @@
     color: rgba(255,255,255,0.45);
   }
 
-<!-- ═══ SERVICES ═══ -->
-<section id="services">
-  <div class="services-header fade-up">
-    <div>
-      <div class="section-label">What We Do</div>
-      <h2 class="section-title">Our Services</h2>
-      <div class="gold-line"></div>
-    </div>
-    <p class="section-sub" style="max-width:300px;text-align:right;">Primary expertise: Structural Design &amp; Consulting — backed by a full suite of civil engineering services.</p>
-  </div>
-  <div class="services-grid fade-up">
-    <div class="service-card featured-service"><span class="service-badge">Core Service</span><span class="service-icon">📐</span><div class="service-name">Structural Design &amp; Consulting</div><div class="service-desc">Our flagship service — RCC, steel, and composite structural engineering designed for seismic zones and wind loads per IS codes. Safe, code-compliant, and cost-effective for residential, commercial, and industrial projects of all scales.</div></div>
-    <div class="service-card"><span class="service-icon">🏛️</span><div class="service-name">Architectural Design</div><div class="service-desc">Modern, Vastu-compliant 3D architectural designs tailored to individual client needs — artistic yet economically grounded.</div></div>
-    <div class="service-card"><span class="service-icon">🏗️</span><div class="service-name">Construction &amp; Contracting</div><div class="service-desc">Full-scale construction services for residential, commercial, and industrial buildings. Turnkey project delivery available.</div></div>
-    <div class="service-card"><span class="service-icon">🛋️</span><div class="service-name">Interior Design</div><div class="service-desc">Functional, aesthetic interiors designed to maximize space and reflect your personal style — residential and commercial.</div></div>
-    <div class="service-card"><span class="service-icon">📋</span><div class="service-name">Building Liaison &amp; Approvals</div><div class="service-desc">End-to-end support for building plan approvals, government liaising, and permitting processes.</div></div>
-    <div class="service-card"><span class="service-icon">⚡</span><div class="service-name">MEP Services</div><div class="service-desc">Mechanical, Electrical, and Plumbing design integrated seamlessly with structural and architectural drawings.</div></div>
-    <div class="service-card"><span class="service-icon">🔍</span><div class="service-name">Structural Inspections &amp; Proof Checking</div><div class="service-desc">Third-party consulting, quality checking, and building inspections. Proof checking for existing designs.</div></div>
-    <div class="service-card"><span class="service-icon">📊</span><div class="service-name">Project Management</div><div class="service-desc">Comprehensive project planning, execution monitoring, contractor coordination, and on-site supervision.</div></div>
-    <div class="service-card"><span class="service-icon">📏</span><div class="service-name">Surveying &amp; Quantity Estimation</div><div class="service-desc">Topographic surveying, levelling, and accurate quantity estimation to keep your project on budget.</div></div>
-  </div>
-</section>
+/* ===== SERVICES SECTION FIX ===== */
+
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.section-label {
+  color: #c9a646;
+  letter-spacing: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.gold-line {
+  width: 50px;
+  height: 3px;
+  background: #c9a646;
+  margin-top: 10px;
+}
+
+.section-sub {
+  color: #aaa;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* GRID FIX */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* CARD DESIGN */
+.service-card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 25px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: #c9a646;
+}
+
+/* FEATURED CARD */
+.featured-service {
+  border: 1px solid #c9a646;
+}
+
+.service-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #c9a646;
+  color: black;
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* ICON */
+.service-icon {
+  font-size: 24px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* TITLE */
+.service-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* DESCRIPTION */
+.service-desc {
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.6;
+}
 
   /* ── PROJECTS ── */
   #projects { background: var(--section-mid); }
